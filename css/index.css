@@ -1,0 +1,61 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0 15rem 0 15rem;
+}
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+    font-weight: 700;
+    
+}
+
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.produtos{
+    text-align: center;
+}
+
+
+
+
+.logo img {
+    width: 200px;
+    height: 200px;
+}
+.logo h1 {
+    font-family: "Arial Black", sans-serif;
+    font-size: 36px;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.product {
+    text-align: center;
+    margin: 20px;
+    display: inline-block;
+}
+.product img {
+    width: 200px;
+    height: 200px;
+}
+.product button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.product .price {
+    font-weight: bold;
+}
+
+
