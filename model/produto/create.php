@@ -8,7 +8,7 @@ include "../../model/db/conecta.php";
 
 
 if(isset($_FILES['cImagem'])){
-    
+    $arquivo = $_FILES['cImagem'];
 }
 
 
