@@ -10,7 +10,7 @@ if (isset($txtConteudo["codigoProduto"])){
     echo "<meta http-equiv='refresh' content='2;
         URL=Trabalho-web-1/view/produto/read.php'>";
 }
-include "conecta.php";
+include "../../model/db/conecta.php";
 $sql = "UPDATE PRODUTOS SET ";
 $sql = $sql." DESCRICAO = '$descricao',";
 $sql = $sql." QUANTIDADE = '$quantidade',";
@@ -24,6 +24,6 @@ if (!$rs){
     return;
 }
 echo "<meta http-equiv='refresh' content='2;
-         URL=Trabalho-web-1/view/produto/read.php'>";
+         URL=/Trabalho-web-1/view/produto/read.php'>";
 mysqli_close($conexao);
 ?>

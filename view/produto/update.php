@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Alteração de Produto</h1>
-    <form action="gravaAlteracaoProduto.php" method="post">  
+    <form action="\Trabalho-web-1\model\produto\update.php" method="post">  
       <input type="hidden" name="codigoProduto" 
         value="<?php print $codigo; ?>"/>
       Descrição: <input type="text" name="cDescricao"
