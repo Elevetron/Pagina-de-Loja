@@ -8,6 +8,7 @@ $total_registros = mysqli_num_rows($rs);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="\Trabalho-web-1\css\read.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,20 +44,21 @@ $total_registros = mysqli_num_rows($rs);
     //} enquanto não será fechado aqui
 ?>
 <tr>
+    <td><?php print $id; ?></td>
     <td><?php print $descricao; ?></td>
     <td><?php print $quantidade; ?></td>
     <td><?php print $preco; ?></td>
     <td><!-- botão de alteração -->
         <a href="alteraProduto.php?id=
          <?php print $id;?>">
-         <img src="alterar.png" border="0"
+         <img src="\Trabalho-web-1\images\alterar.png" border="0"
          width="20px" heigth="20px"></a>
         <!-- botão de exclusão -->
         <a href="javascript:func()" 
         onclick="confirmacao
         ('<?php print $id; ?>',
         '<?php print $descricao; ?>')">
-         <img src="excluir.png" border="0"
+         <img src="\Trabalho-web-1\images\excluir.png" border="0"
          width="20px" heigth="20px"></a>
     </td>
 </tr>
