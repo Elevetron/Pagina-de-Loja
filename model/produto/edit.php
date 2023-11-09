@@ -8,7 +8,7 @@ if (isset($txtConteudo["codigoProduto"])){
 }else{
     echo "Não foi alterado!";
     echo "<meta http-equiv='refresh' content='2;
-        URL=alteraProduto.php'>";
+        URL=Trabalho-web-1/view/produto/read.php'>";
 }
 include "conecta.php";
 $sql = "UPDATE PRODUTOS SET ";
@@ -23,7 +23,7 @@ if (!$rs){
     echo "Problemas na conexão!";
     return;
 }
-echo "<meta http-equiv='refresh' content='0;
-         URL=consultaProduto.php'>";
+echo "<meta http-equiv='refresh' content='2;
+         URL=Trabalho-web-1/view/produto/read.php'>";
 mysqli_close($conexao);
 ?>

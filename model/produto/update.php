@@ -7,8 +7,8 @@ if (isset($txtConteudo["codigoProduto"])){
     $preco =$txtConteudo["cPreco"];
 }else{
     echo "Não foi alterado!";
-    echo "<meta http-equiv='refresh' content='2;
-        URL=alteraProduto.php'>";
+    echo "<meta http-equiv='refresh' content='0;
+        URL=Trabalho-web-1/view/produto/read.php'>";
 }
 include "conecta.php";
 $sql = "UPDATE PRODUTOS SET ";
@@ -24,6 +24,6 @@ if (!$rs){
     return;
 }
 echo "<meta http-equiv='refresh' content='0;
-         URL=consultaProduto.php'>";
+         URL=Trabalho-web-1/view/produto/read.php'>";
 mysqli_close($conexao);
 ?>

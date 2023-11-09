@@ -12,14 +12,14 @@ $total_registros = mysqli_num_rows($rs);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta Pessoa</title>
+    <title>Consulta Produto</title>
     <script language="Javascript">
         function confirmacao(id,descricao){
             var resp = confirm("Deseja remover "+
                         descricao+"?");
             if (resp == true){
                 window.location.href=
-                        "excluiProduto.php?+id="+id;
+                        "\Trabalho-web-1\model\produto\delete.php+id="+id;
             }
         }
     </script>
@@ -49,7 +49,7 @@ $total_registros = mysqli_num_rows($rs);
     <td><?php print $quantidade; ?></td>
     <td><?php print $preco; ?></td>
     <td><!-- botão de alteração -->
-        <a href="alteraProduto.php?id=
+        <a href="\Trabalho-web-1\model\produto\update.php?id=
          <?php print $id;?>">
          <img src="\Trabalho-web-1\images\alterar.png" border="0"
          width="20px" heigth="20px"></a>

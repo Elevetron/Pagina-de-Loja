@@ -16,7 +16,7 @@ if (isset($txtConteudo["id"])){
     }
     mysqli_close($conexao);
     print '<meta http-equiv="refresh" 
-    content="2;URL=index.php"/>';
+    content="0;URL=Trabalho-web-1/view/produto/read.php"/>';
 }else{
     print "Exclusão não efetuada, verifique!";
 }

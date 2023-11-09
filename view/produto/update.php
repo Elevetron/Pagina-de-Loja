@@ -30,17 +30,17 @@ if (isset($txtConteudo["id"])){
     $var_id= $txtConteudo["id"];
 
     $sql = "SELECT * FROM PRODUTOS";
-    $sql = $sql." WHERE ID = '".$var_id."'";
+    $sql = $sql." WHERE id = '".$var_id."'";
 
     $rs = mysqli_query($conexao,$sql);
     $reg = mysqli_fetch_array($rs);
-    $codigo = $reg["ID"];
+    $codigo = $reg["id"];
     $var_descricao = $reg["descricao"];
     $var_quantidade = $reg["quantidade"];
     $var_preco = $reg["preco"];
 }else{
     echo "Registro não localizado!";
     echo "<meta http-equiv='Refresh' content='2;
-            URL=consultaProduto.php'>";
+            URL=Trabalho-web-1/view/produto/read.php'>";
 }           
 ?>
