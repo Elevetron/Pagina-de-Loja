@@ -2,7 +2,7 @@
 include "../../model/db/conecta.php";
 
 $sql = "SELECT * FROM PRODUTOS";
-//busca na tabela pessoa todos os registros
+//busca na tabela produtos todos os registros
 $rs = mysqli_query($conexao,$sql);
 $total_registros = mysqli_num_rows($rs);
 ?>
@@ -19,7 +19,7 @@ $total_registros = mysqli_num_rows($rs);
                         descricao+"?");
             if (resp == true){
                 window.location.href=
-                        "\Trabalho-web-1\model\produto\delete.php+id="+id;
+                        "/Trabalho-web-1/model/produto/delete.php?+id="+id;
             }
         }
     </script>

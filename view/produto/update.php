@@ -40,7 +40,7 @@ if (isset($txtConteudo["id"])){
     $var_preco = $reg["preco"];
 }else{
     echo "Registro não localizado!";
-    echo "<meta http-equiv='Refresh' content='2;
-            URL=Trabalho-web-1/view/produto/read.php'>";
+    echo "<meta http-equiv='Refresh' content='1;
+            URL=/Trabalho-web-1/view/produto/read.php'>";
 }           
 ?>
