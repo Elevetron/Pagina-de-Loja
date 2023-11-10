@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="\Trabalho-web-1\css\create.css">
 </head>
 <body>
+<nav>
+            <div class="menu">
+                <div id="logo">
+                    <img src="\Trabalho-web-1\images\logo_empresa.jpg" alt="Logo da Empresa" width="100" height="100">
+
+                </div>
+                <a href="../index.php" style="text-decoration: none; color: inherit;">Tela Inicial</a>
+                
+            </div>
+        </nav>
+
+        <div class="titulo">
+            <h1>Elevetron Segurança</h1>
+        </div>
     <h1>Cadastro de Produto</h1>
     <form action="../../model/produto/create.php" method="post" enctype="multipart/form-data">
         Descrição: <input type="text" name="cDescricao"><br>
@@ -16,5 +30,6 @@
 
         <input type="submit" value="Salvar" name="b1">
     </form>
+   
 </body>
 </html>

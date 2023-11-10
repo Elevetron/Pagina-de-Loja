@@ -25,6 +25,16 @@ $total_registros = mysqli_num_rows($rs);
     </script>
 </head>
 <body>
+<nav>
+            <div class="menu">
+                <div id="logo">
+                    <img src="\Trabalho-web-1\images\logo_empresa.jpg" alt="Logo da Empresa" width="100" height="100">
+
+                </div>
+                <a href="../index.php" style="text-decoration: none; color: inherit;">Tela Inicial</a>
+                
+            </div>
+        </nav>
 <h1>Relação de Produtos</h1>    
 <table cellspacing="0" border="1">
 <thead>
@@ -35,6 +45,7 @@ $total_registros = mysqli_num_rows($rs);
         <th>Ações</th>
     </tr>
 </thead>
+
 <?php
     while ($reg = mysqli_fetch_array($rs)){
         $id = $reg["id"];

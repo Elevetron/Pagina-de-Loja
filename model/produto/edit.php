@@ -25,10 +25,21 @@ if (isset($txtConteudo["id"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\Trabalho-web-1\css\edit.css">
     <title>Alteração de Produto</title>
 </head>
 <body>
-    <h1>Alteração de Produto</h1>
+<nav>
+            <div class="menu">
+                <div id="logo">
+                    <img src="\Trabalho-web-1\images\logo_empresa.jpg" alt="Logo da Empresa" width="100" height="100">
+
+                </div>
+                <a href="\Trabalho-web-1\view\index.php" style="text-decoration: none; color: inherit;">Tela Inicial</a>
+                
+            </div>
+        </nav>
+<h1 style="text-align: center;">Alteração de Produto</h1>
     <form action="\Trabalho-web-1\model\produto\update.php" method="post">  
       <input type="hidden" name="codigoProduto" 
         value="<?php print $codigo; ?>"/>
@@ -41,5 +52,6 @@ if (isset($txtConteudo["id"])){
 
     <input type="submit" value="Alterar" name="b1">
     </form>
+    
 </body>
 </html>
