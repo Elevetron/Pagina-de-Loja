@@ -49,7 +49,7 @@ $total_registros = mysqli_num_rows($rs);
     <td><?php print $quantidade; ?></td>
     <td><?php print $preco; ?></td>
     <td><!-- botão de alteração -->
-        <a href="\Trabalho-web-1\model\produto\update.php?id=
+        <a href="\Trabalho-web-1\model\produto\edit.php?id=
          <?php print $id;?>">
          <img src="\Trabalho-web-1\images\alterar.png" border="0"
          width="20px" heigth="20px"></a>
