@@ -1,61 +1,70 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    padding: 0 15rem 0 15rem;
 }
-
-h1 {
-    text-align: center;
-    color: #333;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-thead {
-    background-color: #4caf50;
-    color: #fff;
-}
-
-th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-tr:hover {
-    background-color: #ada5c4;
-}
-
-.actions {
+.menu{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+    font-weight: 700;
+    
 }
 
-.actions a {
-    margin-right: 10px;
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.actions a:last-child {
-    margin-right: 0;
+.produtos{
+    text-align: center;
 }
 
-.actions a:last-child {
-    color: #fff;
-    background-color: #e74c3c;
-    padding: 5px 10px;
-    text-decoration: none;
-    border-radius: 3px;
+
+
+
+.logo img {
+    width: 200px;
+    height: 200px;
+}
+.logo h1 {
+    font-family: "Arial Black", sans-serif;
+    font-size: 36px;
+    margin: 0;
+    margin-left: 10px;
 }
 
-.actions a:last-child:hover {
-    background-color: #c0392b;
+.product {
+    text-align: center;
+    margin: 20px;
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 0 5px rgba(0, 0, 0, 0.3);
+    
 }
 
-/* Adicionando algum espaço ao redor da tabela */
-table, th, td {
-    margin: 10px;
+.conteudo-do-produto{
+    padding: 10px;
 }
+
+.product img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px 10px 0 0;
+}
+.product button {
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.product .price {
+    font-weight: bold;
+}
+
+

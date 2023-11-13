@@ -34,36 +34,41 @@ $total_registros = mysqli_num_rows($rs);
 
 
         <div class="produtos">
-    <h1>Equipamentos de Segurança</h1>
-    <?php
-    $rs_produtos = mysqli_query($conexao, $sql);
-    while ($reg = mysqli_fetch_array($rs_produtos)) {
-        $id = $reg["id"];
-        $descricao = $reg["descricao"];
-        $preco = str_replace('.', ',', $reg["preco"]);
-        $id_imagem = $reg['id_imagem'];
+            <h1>Equipamentos de Segurança</h1>
+            <?php
+            $rs_produtos = mysqli_query($conexao, $sql);
+            while ($reg = mysqli_fetch_array($rs_produtos)) {
+                $id = $reg["id"];
+                $descricao = $reg["descricao"];
+                $preco = str_replace('.', ',', $reg["preco"]);
+                $id_imagem = $reg['id_imagem'];
 
-        $rs_imagem = mysqli_query($conexao, "SELECT path FROM arquivos WHERE id = $id_imagem") or die("Erro na consulta: " . mysqli_error($conexao));
-        
-        if ($rs_imagem && mysqli_num_rows($rs_imagem) > 0) {
-            $row = mysqli_fetch_assoc($rs_imagem);
-            $path = $row["path"];
-            if (!file_exists("../$path")) {
-                $path = "images/imagens_padrao/sem_imagem.png";
-            }
-        } else {
-            $path = "images/imagens_padrao/sem_imagem.png";
-        }
-    ?>
-        <div class="product">
-            <img src="<?php echo "../$path"; ?>" alt="<?php echo $descricao; ?>">
-            <p><?php echo $descricao; ?></p>
-            <p class="price">R$ <?php echo $preco; ?></p>
-            <button>Comprar</button>
+                $rs_imagem = mysqli_query($conexao, "SELECT path FROM arquivos WHERE id = $id_imagem") or die("Erro na consulta: " . mysqli_error($conexao));
+
+                if ($rs_imagem && mysqli_num_rows($rs_imagem) > 0) {
+                    $row = mysqli_fetch_assoc($rs_imagem);
+                    $path = $row["path"];
+                    if (!file_exists("../$path")) {
+                        $path = "images/imagens_padrao/sem_imagem.png";
+                    }
+                } else {
+                    $path = "images/imagens_padrao/sem_imagem.png";
+                }
+            ?>
+                <div class="product">
+                    <div class="imagem-do-produto">
+                        <img src="<?php echo "../$path"; ?>" alt="<?php echo $descricao; ?>">
+                    </div>
+                    <div class="conteudo-do-produto">
+                        <p><?php echo $descricao; ?></p>
+                        <p class="price">R$ <?php echo $preco; ?></p>
+                        <button>Comprar</button>
+                    </div>
+
+                </div>
+            <?php } ?>
+
         </div>
-    <?php } ?>
-
-</div>
 
     </body>
 
