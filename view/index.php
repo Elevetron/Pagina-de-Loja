@@ -34,42 +34,63 @@ $total_registros = mysqli_num_rows($rs);
 
 
         <div class="produtos">
-            <h1>Equipamentos de Segurança</h1>
-            <?php
-            $rs_produtos = mysqli_query($conexao, $sql);
-            while ($reg = mysqli_fetch_array($rs_produtos)) {
-                $id = $reg["id"];
-                $descricao = $reg["descricao"];
-                $preco = str_replace('.', ',', $reg["preco"]);
-                $id_imagem = $reg['id_imagem'];
+    <h1>Equipamentos de Segurança</h1>
+    <?php
+    $rs_produtos = mysqli_query($conexao, $sql);
+    while ($reg = mysqli_fetch_array($rs_produtos)) {
+        $id = $reg["id"];
+        $descricao = $reg["descricao"];
+        $preco = str_replace('.', ',', $reg["preco"]);
+        $id_imagem = $reg['id_imagem'];
+        $quantidade = $reg['quantidade'];
 
-                $rs_imagem = mysqli_query($conexao, "SELECT path FROM arquivos WHERE id = $id_imagem") or die("Erro na consulta: " . mysqli_error($conexao));
+        if ($quantidade > 0) {
+            $rs_imagem = mysqli_query($conexao, "SELECT path FROM arquivos WHERE id = $id_imagem") or die("Erro na consulta: " . mysqli_error($conexao));
 
-                if ($rs_imagem && mysqli_num_rows($rs_imagem) > 0) {
-                    $row = mysqli_fetch_assoc($rs_imagem);
-                    $path = $row["path"];
-                    if (!file_exists("../$path")) {
-                        $path = "images/imagens_padrao/sem_imagem.png";
-                    }
-                } else {
+            if ($rs_imagem && mysqli_num_rows($rs_imagem) > 0) {
+                $row = mysqli_fetch_assoc($rs_imagem);
+                $path = $row["path"];
+                if (!file_exists("../$path")) {
                     $path = "images/imagens_padrao/sem_imagem.png";
                 }
-            ?>
-                <div class="product">
-                    <div class="imagem-do-produto">
-                        <img src="<?php echo "../$path"; ?>" alt="<?php echo $descricao; ?>">
-                    </div>
-                    <div class="conteudo-do-produto">
-                        <p><?php echo $descricao; ?></p>
-                        <p class="price">R$ <?php echo $preco; ?></p>
-                        <button>Comprar</button>
-                    </div>
-
+            } else {
+                $path = "images/imagens_padrao/sem_imagem.png";
+            }
+    ?>
+            <div class="product">
+                <div class="imagem-do-produto">
+                    <img src="<?php echo "../$path"; ?>" alt="<?php echo $descricao; ?>">
                 </div>
-            <?php } ?>
+                <div class="conteudo-do-produto">
+                    <p><?php echo $descricao; ?></p>
+                    <p class="price">R$ <?php echo $preco; ?></p>
+                    <p class="quantity">Quantidade: <?php echo $quantidade; ?></p>
 
-        </div>
+                    <button onclick="confirmarCompra('<?php echo $id; ?>', '<?php echo $quantidade; ?>')">Comprar</button>
+                </div>
+            </div>
+    <?php
+        }
+    }
+    ?>
+</div>
+
 
     </body>
 
 </html>
+
+<script>
+
+    function confirmarCompra(idProduto, quantidade) {
+    var resposta = confirm("Deseja continuar com a compra?");
+
+    if (resposta == true) {
+        window.location.href = "../model/produto/compra.php?id=" + idProduto;
+    } else {
+        
+        alert("Compra cancelada");
+    }
+}
+
+</script>

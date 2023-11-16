@@ -1,29 +1,33 @@
 <?php
-$txtConteudo = filter_input_array(INPUT_POST,FILTER_DEFAULT);
-if (isset($txtConteudo["codigoProduto"])){
-    $id = $txtConteudo["codigoProduto"];
-    $descricao = $txtConteudo["cDescricao"];
-    $quantidade = $txtConteudo["cQuantidade"];
-    $preco =$txtConteudo["cPreco"];
-}else{
-    echo "Não foi alterado!";
-    echo "<meta http-equiv='refresh' content='2;
-        URL=Trabalho-web-1/view/produto/read.php'>";
-}
-include "../../model/db/conecta.php";
-$sql = "UPDATE PRODUTOS SET ";
-$sql = $sql." DESCRICAO = '$descricao',";
-$sql = $sql." QUANTIDADE = '$quantidade',";
-$sql = $sql." PRECO = '$preco'";
-$sql = $sql." WHERE ID = '".$id."'";
+include "../db/conecta.php";
 
-echo $sql; //para conferir se o comando esta ok
-$rs = mysqli_query($conexao,$sql);
-if (!$rs){
-    echo "Problemas na conexão!";
-    return;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id_produto = $_POST["id_produto"];
+    $descricao = $_POST["cDescricao"];
+    $quantidade = $_POST["cQuantidade"];
+    $preco = $_POST["cPreco"];
+
+    
+    if ($_FILES["cImagem"]["size"] > 0) {
+        
+        $target_dir = "../images/upload/";
+        $target_file = $target_dir . basename($_FILES["cImagem"]["name"]);
+        move_uploaded_file($_FILES["cImagem"]["tmp_name"], $target_file);
+
+        
+        $sqlUpdate = "UPDATE PRODUTOS SET descricao = '$descricao', quantidade = $quantidade, preco = '$preco', path_imagem = '$target_file' WHERE id = $id_produto";
+    } else {
+        
+        $sqlUpdate = "UPDATE PRODUTOS SET descricao = '$descricao', quantidade = $quantidade, preco = '$preco' WHERE id = $id_produto";
+    }
+
+    if (mysqli_query($conexao, $sqlUpdate)) {
+        header("Location: ../../view/produto/read.php");
+        exit();
+    } else {
+        echo "Erro ao atualizar o produto: " . mysqli_error($conexao);
+    }
+} else {
+    echo "Requisição inválida!";
 }
-echo "<meta http-equiv='refresh' content='2;
-         URL=/Trabalho-web-1/view/produto/read.php'>";
-mysqli_close($conexao);
 ?>

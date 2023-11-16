@@ -18,9 +18,8 @@ $total_registros = mysqli_num_rows($rs);
 <body>
     <nav>
         <div class="menu">
-        <div id="logo">
+            <div id="logo">
                 <a href="../index.php" style="text-decoration: none; color: inherit;">
-                    
                     <img src="../../images/logo_empresa.jpg" alt="Logo da Empresa" width="100" height="100">
                 </a>
             </div>
@@ -41,6 +40,7 @@ $total_registros = mysqli_num_rows($rs);
             $descricao = $reg["descricao"];
             $preco = str_replace('.', ',', $reg["preco"]);
             $id_imagem = $reg['id_imagem'];
+            $quantidade = $reg['quantidade'];
 
             $rs_imagem = mysqli_query($conexao, "SELECT path FROM arquivos WHERE id = $id_imagem") or die("Erro na consulta: " . mysqli_error($conexao));
 
@@ -61,7 +61,8 @@ $total_registros = mysqli_num_rows($rs);
                 <div class="conteudo-do-produto">
                     <p><?php echo $descricao; ?></p>
                     <p class="price">R$ <?php echo $preco; ?></p>
-                    <a href="../view/produto/edit.php?id=<?php echo $id; ?>"><button>Editar</button></a>
+                    <p class="quantity">Quantidade disponível: <?php echo $quantidade; ?></p>
+                    <a href="edit.php?id=<?php echo $id; ?>"><button>Editar</button></a>
                     <button onclick="confirmarExclusao(<?php echo $id; ?>)">Excluir</button>
                 </div>
             </div>
