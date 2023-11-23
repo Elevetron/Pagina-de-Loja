@@ -23,8 +23,11 @@ $total_registros = mysqli_num_rows($rs);
                     <img src="../images/logo_empresa.jpg" alt="Logo da Empresa" width="100" height="100">
 
                 </div>
-                <a href="../view/produto/create.php" style="text-decoration: none; color: inherit;">Cadastrar Produtos</a>
-                <a href="../view/produto/read.php" style="text-decoration: none; color: inherit;">Consulta de Produtos</a>
+                <div class="links-menu">
+                    <a href="../view/produto/create.php" style="text-decoration: none; color: inherit;">Cadastrar Produtos</a>
+                    <a href="../view/produto/read.php" style="text-decoration: none; color: inherit;">Consulta de Produtos</a>
+                </div>
+                
             </div>
         </nav>
 

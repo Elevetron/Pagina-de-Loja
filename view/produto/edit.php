@@ -57,7 +57,7 @@ if (isset($_GET['id'])) {
         Descrição: <input type="text" name="cDescricao" value="<?php echo $descricao; ?>"><br>
         Quantidade: <input type="text" name="cQuantidade" value="<?php echo $quantidade; ?>"><br>
         Preço: <input type="text" name="cPreco" value="<?php echo $preco; ?>"><br>
-        Imagem: <input type="file" name="cImagem"><br>
+        
 
         <input type="submit" value="Salvar" name="b1">
     </form>

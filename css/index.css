@@ -3,14 +3,24 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0 15rem 0 15rem;
+    
+    
 }
 .menu{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
-    
     font-weight: 700;
+    background-color: rgb(255, 255, 255);
+    
+}
+
+.links-menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 500px;
+
     
 }
 
@@ -23,9 +33,6 @@ body {
 .produtos{
     text-align: center;
 }
-
-
-
 
 .logo img {
     width: 200px;
@@ -41,7 +48,7 @@ body {
 .product {
     text-align: center;
     margin: 20px;
-    display: inline-block;
+    display: inline-block; 
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 0 5px rgba(0, 0, 0, 0.3);
     
@@ -49,6 +56,9 @@ body {
 
 .conteudo-do-produto{
     padding: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0 0 10px 10px;
+
 }
 
 .product img {
